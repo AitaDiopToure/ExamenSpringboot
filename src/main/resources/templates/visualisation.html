@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Liste des CV</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+<body>
+!-- create navigation bar ( header) -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+              aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span> <span
+              class="icon-bar"></span> <span class="icon-bar"></span> <span
+              class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" th:href="@{/}">Registration and
+        Login Module</a>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br>
+<h1>Liste des CV</h1>
+<table border="2" cellspacing="25" cellpadding="25" >
+  <tr>
+    <th>ID</th>
+    <th>NOM</th>
+    <th>PRENOM</th>
+    <th>EMAIL</th>
+    <th>PASSWORD</th>
+    <th>AGE</th>
+    <th>SPECIALITE</th>
+    <th>ADRESSE</th>
+    <th>TELEPHONE</th>
+    <th>NIVEAU D'ETUDE</th>
+    <th>EXPERIENCE PROFESSIONNELLE</th>
+    <th>MODIFICATION</th>
+  </tr>
+  <tr th:each="cv:${cvs}">
+    <td th:text="${cv.id}"> </td>
+    <td th:text="${cv.nom}"> </td>
+    <td th:text="${cv.prenom}"> </td>
+    <td th:text="${cv.email}"> </td>
+    <td th:text="${cv.password}"> </td>
+    <td th:text="${cv.telephone}"> </td>
+    <td th:text="${cv.adresse}"> </td>
+    <td th:text="${cv.specialite}"> </td>
+    <td th:text="${cv.niveauetude}"> </td>
+    <td th:text="${cv.experienceprofessionnelle}"> </td>
+    <td>
+      <a href="#" th:href="@{/edit/{id} (id=${cv.id})}">EDIT</a>
+      <a href="#" th:href="@{/delete/{id} (id=${cv.id})}">DELETE</a>
+    </td>
+  </tr>
+</table>
+<a th:href="@{/registration}">Créer un CV</a>
+</body>
+</html>

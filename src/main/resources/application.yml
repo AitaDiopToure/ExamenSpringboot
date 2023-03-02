@@ -1,0 +1,43 @@
+server:
+  port: 8889
+
+spring:
+  datasource:
+    password:
+    url: jdbc:mysql://localhost:3307/inscriptionCV_db?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+  application:
+    name: ExamenSpringboot
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health,info,metrics,wavefront
+#  info:
+#    env:
+#      enabled: true
+#
+#  endpoint:
+#    health:
+#      show-details: ALWAYS
+#
+#info:
+#  application:
+#    name: pointage
+#    version: '@project.version@'
+#
+#
+#      #logging:
+#      #level:
+#      #org:
+#    #springframework:
+#    #web: DEBUG
+#    #file:
+#    #name: /Users/macbookair/Documents/IJProjects/2022/Spring/2022/coaching/bank-credit-master/logs/mylog.log
+#

@@ -13,15 +13,15 @@ pipeline {
         }
  stage('Deploy') {
             steps {
-              bat 'docker build -t Examenspringbootjenkins:v2 .'
+              bat 'docker build -t examenspringbootjenkins:v2 .'
                   }
                    }
         stage('Push to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
                     bat 'docker login -u %DOCKER_HUB_USERNAME% -p %DOCKER_HUB_PASSWORD%'
-                    bat 'docker tag Examenspringbootjenkins:v2 aitadioptoure/Examenspringbootjenkins:v2'
-                    bat 'docker push aitadioptoure/Examenspringbootjenkins:v2'
+                    bat 'docker tag examenspringbootjenkins:v2 aitadioptoure/examenspringbootjenkins:v2'
+                    bat 'docker push aitadioptoure/examenspringbootjenkins:v2'
                 }
             }
         }

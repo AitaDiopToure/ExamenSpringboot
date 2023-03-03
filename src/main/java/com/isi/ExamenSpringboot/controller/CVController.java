@@ -44,6 +44,6 @@ public class CVController {
     @GetMapping(value = "/visualisation")
     public  String getAll (Model model){
         model.addAttribute("cv", service.findAll());
-        return "/visualisation";
+        return "visualisation";
     }
 }

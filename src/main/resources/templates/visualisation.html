@@ -45,22 +45,22 @@
     <th>EXPERIENCE PROFESSIONNELLE</th>
     <th>MODIFICATION</th>
   </tr>
-  <tr th:each="cv:${cvs}">
-    <td th:text="${cv.id}"> </td>
-    <td th:text="${cv.nom}"> </td>
-    <td th:text="${cv.prenom}"> </td>
-    <td th:text="${cv.email}"> </td>
-    <td th:text="${cv.password}"> </td>
-    <td th:text="${cv.telephone}"> </td>
-    <td th:text="${cv.adresse}"> </td>
-    <td th:text="${cv.specialite}"> </td>
-    <td th:text="${cv.niveauetude}"> </td>
-    <td th:text="${cv.experienceprofessionnelle}"> </td>
-    <td>
-      <a href="#" th:href="@{/edit/{id} (id=${cv.id})}">EDIT</a>
-      <a href="#" th:href="@{/delete/{id} (id=${cv.id})}">DELETE</a>
-    </td>
-  </tr>
+<tr th:each="c:${cv}">
+<td th:text="${c.id}"> </td>
+<td th:text="${c.nom}"> </td>
+<td th:text="${c.prenom}"> </td>
+<td th:text="${c.email}"> </td>
+<td th:text="${c.password}"> </td>
+<td th:text="${c.telephone}"> </td>
+<td th:text="${c.adresse}"> </td>
+<td th:text="${c.specialite}"> </td>
+<td th:text="${c.niveauEtude}"> </td>
+<td th:text="${c.experienceProfessionnelle}"> </td>
+<td>
+<a href="#" th:href="@{/edit/{id} (id=${c.id})}">EDIT</a>
+<a href="#" th:href="@{/delete/{id} (id=${c.id})}">DELETE</a>
+</td>
+ </tr>
 </table>
 <a th:href="@{/registration}">Créer un CV</a>
 </body>
